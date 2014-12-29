@@ -308,6 +308,17 @@ function zip(){
   return List2   
 }
 
+
+// Create dynamic popup window
+//
+function popup_window(content){
+  var w = window.open('', '', 'width=400,height=400,resizeable,scrollbars');
+  w.document.write(content);
+  w.document.close(); // needed for chrome and safari
+}
+
+
+
 sin = vectorize(Math.sin)
 cos = vectorize(Math.cos)
 exp = vectorize(Math.exp)
