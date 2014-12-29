@@ -318,6 +318,35 @@ function popup_window(content){
 }
 
 
+function str(object){
+    return object.toString()
+}
+
+// var str = "My Name is %NAME% and my age is %AGE%.";
+// var replaceData = {"%NAME%":"Mike","%AGE%":"26","%EVENT%":"20"};
+// var output = substitute(str, replaceData);
+// console.log(output)
+function format(str, data) {
+    var output = str.replace(/%[^%]+%/g, function(match) {
+        if (match in data) {
+            return(data[match]);
+        } else {
+            return("");
+        }
+    });
+    return(output);
+}
+
+
+function image_template(image_src, alt="", height=500, width=500){
+      
+      var template = '<img style="max-width: 100px; height: auto; " src="%SRC%" />'
+      return format(template)
+      
+      var template = '<img src="%SRC%" alt="%ALT%" width="%W%" height="%H%">'
+      return format(template, {"%SRC%" : image_src, "%ALT%" : alt, "%W%" : width, "%H%" : height});
+}
+
 
 sin = vectorize(Math.sin)
 cos = vectorize(Math.cos)
