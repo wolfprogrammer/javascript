@@ -315,6 +315,7 @@ function popup_window(content){
   var w = window.open('', '', 'width=400,height=400,resizeable,scrollbars');
   w.document.write(content);
   w.document.close(); // needed for chrome and safari
+  return w
 }
 
 
@@ -347,6 +348,19 @@ function image_template(image_src, alt="", height=500, width=500){
       return format(template, {"%SRC%" : image_src, "%ALT%" : alt, "%W%" : width, "%H%" : height});
 }
 
+
+// Open a new Window in the Slideshare website with
+// all slides images.
+//
+functio scrape_slideshare(){
+    
+    elements = document.getElementsByClassName("slide_image")
+    urls = pluck("full")(pluck("dataset")(elements))
+    codelst = map(image_template, urls)
+    code = codelst.join("\n <br>")  
+    popup_window(code)
+
+}
 
 sin = vectorize(Math.sin)
 cos = vectorize(Math.cos)
