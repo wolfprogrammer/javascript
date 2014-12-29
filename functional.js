@@ -340,8 +340,8 @@ function format(str, data) {
 
 function image_template(image_src, alt="", height=500, width=500){
       
-      var template = '<img style="max-width: 100px; height: auto; " src="%SRC%" />'
-      return format(template)
+      //var template = '<img style="max-width: 100px; height: auto; " src="%SRC%" />'
+      //return format(template)
       
       var template = '<img src="%SRC%" alt="%ALT%" width="%W%" height="%H%">'
       return format(template, {"%SRC%" : image_src, "%ALT%" : alt, "%W%" : width, "%H%" : height});
