@@ -352,7 +352,7 @@ function image_template(image_src, alt="", height=500, width=500){
 // Open a new Window in the Slideshare website with
 // all slides images.
 //
-functio scrape_slideshare(){
+function scrape_slideshare(){
     
     elements = document.getElementsByClassName("slide_image")
     urls = pluck("full")(pluck("dataset")(elements))
