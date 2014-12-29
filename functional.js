@@ -358,9 +358,21 @@ function scrape_slideshare(){
     urls = pluck("full")(pluck("dataset")(elements))
     codelst = map(image_template, urls)
     code = codelst.join("\n <br>")  
-    popup_window(code)
+    return popup_window(code)
 
 }
+
+
+function scrape_slideshare2(){
+    
+    elements = document.getElementsByClassName("slide_image")
+    urls = pluck("full")(pluck("dataset")(elements))
+    codelst = map(image_template, urls)
+    code = codelst.join("\n <br>")  
+    document.write(code)
+
+}
+
 
 sin = vectorize(Math.sin)
 cos = vectorize(Math.cos)
