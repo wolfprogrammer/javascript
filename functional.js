@@ -442,6 +442,12 @@ function remove_alljs(){
 }
 
 
+function shell(){
+// Open Interactive Shell
+//
+    injectscript('http://www.billyreisinger.com/jash/source/latest/Jash.js')    
+}
+
 
 function user_guide(){
     console.log("Functional.js - A functional programming Library for Javascript ")
