@@ -432,9 +432,14 @@ function removejs(filename, filetype="js"){
   if (allsuspects[i] && allsuspects[i].getAttribute(targetattr)!=null && allsuspects[i].getAttribute(targetattr).indexOf(filename)!=-1)
    allsuspects[i].parentNode.removeChild(allsuspects[i]) //remove element by calling parentNode.removeChild()
  }
+}https://raw.githubusercontent.com/wolfprogrammer/javascript/master/functional.js
+
+function remove_alljs(){
+        var url = ""
+        map(removejs ,pluck("src")(document.scripts))
+        document.body.appendChild(document.createElement('script')).src = "https://raw.githubusercontent.com/wolfprogrammer/javascript/master/functional.js"
+        
 }
-
-
 
 
 
