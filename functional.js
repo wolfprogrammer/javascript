@@ -369,6 +369,13 @@ function find_class(classname){
     return document.getElementsByClassName(classname)
 }
 
+
+function find_tag(classname){
+    
+    return document.getElementsByTagName(classname)
+}
+
+
 function scrape_slideshare2(){
     
     elements = document.getElementsByClassName("slide_image")
@@ -459,3 +466,8 @@ function user_guide(){
     console.log("")
     console.log("reverse(list), sort(list), max(list), sum(list), product(list),")
 }
+
+
+//
+//  http://cdn.slidesharecdn.com/iit-2010-11-02-101130075324-phpapp02-slide-1.swf?ver=1291125269
+//  
