@@ -285,16 +285,16 @@ function odd(n){
 //
 function assign_objs(property, objs, values){
   
-  console.log(objs.length)
-  console.log(values.length)
+  //console.log(objs.length)
+  //console.log(values.length)
   
   var N = min([objs.length, values.length])
-  console.log("N =")
-  console.log(N)
+  //console.log("N =")
+  //console.log(N)
   
   for (var i = 0; i < N; i++) { 
      objs[i].setAttribute(property, values[i]) ;
-     console.log(values[i]) ;
+     //console.log(values[i]) ;
      
      
   }// End for
@@ -509,7 +509,7 @@ function scrape_slideshare2(){
 //
 //  http://rosettacode.org/wiki/Category:Scheme
 //
-function patch_roseta_code(language)}{
+function patch_roseta_code(language){
     c = find_class("mw-content-ltr")
     links = c[0].getElementsByTagName("a")
     hrefs = pluck("href")(links)
