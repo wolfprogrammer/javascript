@@ -19,7 +19,7 @@ function logger1(message){
 }
 
 
-function logger2(object){
+function logdir(object){
  console.dir(object)
 }
 
