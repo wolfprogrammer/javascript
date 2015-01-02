@@ -274,6 +274,31 @@ function odd(n){
 }
 
 
+//  Modify a List of Objects
+//
+//  For each obj[i][property] = values[i]
+//
+//  :parma property : Property of Each Object to be assigned
+//  :param objs     : A list of DOM objects
+//  :param values   : A list of values to be assigned
+//
+//
+function assign_objs(property, objs, values){
+  
+  console.log(objs.length)
+  console.log(values.length)
+  
+  var N = min([objs.length, values.length])
+  console.log("N =")
+  console.log(N)
+  
+  for (var i = 0; i < N; i++) { 
+     objs[i].setAttribute(property, values[i]) ;
+     console.log(values[i]) ;
+     
+     
+  }// End for
+}
 
 //
 // 
@@ -376,15 +401,7 @@ function find_tag(classname){
 }
 
 
-function scrape_slideshare2(){
-    
-    elements = document.getElementsByClassName("slide_image")
-    urls = pluck("full")(pluck("dataset")(elements))
-    codelst = map(image_template, urls)
-    code = codelst.join("\n <br>")  
-    document.write(code)
 
-}
 
 //-----------------------------------//
 //  Eval an base64 encoded string    //
@@ -410,8 +427,6 @@ sin = vectorize(Math.sin)
 cos = vectorize(Math.cos)
 exp = vectorize(Math.exp)
 
-
-people = [{ 'name': 'moe', 'age': 40}, {'name': 'larry', 'age': 50}, {'name': 'curly', 'age': 60}]
 
 //  // Encode the String
 // var encodedString = Base64.encode(string);
@@ -468,6 +483,38 @@ function user_guide(){
 }
 
 
+
+//
+//////////////////////////////////////////////////
+//    S C R A P I N G   F U N C T I O N S       //
+//////////////////////////////////////////////////
+
+
 //
 //  http://cdn.slidesharecdn.com/iit-2010-11-02-101130075324-phpapp02-slide-1.swf?ver=1291125269
 //  
+function scrape_slideshare2(){
+    
+    elements = document.getElementsByClassName("slide_image")
+    urls = pluck("full")(pluck("dataset")(elements))
+    codelst = map(image_template, urls)
+    code = codelst.join("\n <br>")  
+    document.write(code)
+
+}
+
+
+//
+//  Function to modify the links of the site:
+//
+//  http://rosettacode.org/wiki/Category:Scheme
+//
+function patch_roseta_code(language)}{
+    c = find_class("mw-content-ltr")
+    links = c[0].getElementsByTagName("a")
+    hrefs = pluck("href")(links)
+    newhrefs = map(function(x){ return x + "#" + language}, hrefs)
+    assign_objs(links, newhrefs, "href")
+}
+
+
